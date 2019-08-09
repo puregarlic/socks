@@ -4,6 +4,7 @@
   "description": "Clean and fresh IPC communication",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --fix *.js",
     "test": "ava"
   },
   "repository": {
