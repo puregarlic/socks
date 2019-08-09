@@ -1,0 +1,26 @@
+{
+  "name": "@starburn/socks",
+  "version": "0.0.0",
+  "description": "Clean and fresh IPC communication",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puregarlic/socks.git"
+  },
+  "keywords": [
+    "ipc",
+    "net",
+    "sockets",
+    "unix",
+    "windows"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/puregarlic/socks/issues"
+  },
+  "homepage": "https://github.com/puregarlic/socks#readme"
+}
