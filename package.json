@@ -28,5 +28,11 @@
     "ava": "^2.2.0",
     "eslint": "^6.1.0",
     "eslint-config-xo": "^0.26.0"
+  },
+  "dependencies": {
+    "binary-split": "^1.0.5",
+    "fs-extra": "^8.1.0",
+    "nanoid": "^2.0.3",
+    "transform-parse": "^1.0.5"
   }
 }
