@@ -1,0 +1,32 @@
+{
+  "name": "@starburn/socks",
+  "version": "0.0.0",
+  "description": "Clean and fresh IPC communication",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix *.js",
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puregarlic/socks.git"
+  },
+  "keywords": [
+    "ipc",
+    "net",
+    "sockets",
+    "unix",
+    "windows"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/puregarlic/socks/issues"
+  },
+  "homepage": "https://github.com/puregarlic/socks#readme",
+  "devDependencies": {
+    "ava": "^2.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-xo": "^0.26.0"
+  }
+}
