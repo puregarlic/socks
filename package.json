@@ -22,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/puregarlic/socks/issues"
   },
-  "homepage": "https://github.com/puregarlic/socks#readme"
+  "homepage": "https://github.com/puregarlic/socks#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-xo": "^0.26.0"
+  }
 }
