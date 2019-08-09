@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/puregarlic/socks#readme",
   "devDependencies": {
+    "ava": "^2.2.0",
     "eslint": "^6.1.0",
     "eslint-config-xo": "^0.26.0"
   }
