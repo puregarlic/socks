@@ -14,22 +14,22 @@ This example pairs a daemon and temporary client.
 
 ```js
 // server.js
-const {server} = require('@starburn/socks')
+const {listen} = require('@starburn/socks')
 
 const methods = () => {
 	fromFive: async n => await 5 - n
 };
 
-server({}, methods);
+await listen(methods);
 ```
 
 ```js
 // client.js
-const {client} = require('@starburn/socks')
+const {connect} = require('@starburn/socks')
 
-const {call, done} = await client();
+const call = await connect();
 const two = await call('fromFive', 3);
-await done()
+await call('rpc.end')
 ```
 
 ### API
