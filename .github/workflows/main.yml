@@ -1,11 +1,11 @@
 name: Run tests on push
-on: [push, pull_request]
-push:
-  paths:
-    - "*.js"
-pull_request:
-  paths:
-    - "*.js"
+on: 
+  push:
+    paths:
+      - "*.js"
+  pull_request:
+    paths:
+      - "*.js"
 
 jobs:
   build:
