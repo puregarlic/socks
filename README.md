@@ -37,18 +37,21 @@ call('rpc.end')
 
 ```js
 const {listen, connect} = require('@starburn/socks')
-listen(methods, options) // Promise<Server>
-connect(methods, options) // Promise<Function>
+const server = await listen(methods, options)
+const request = await connect(methods, options)
 ```
 
 `methods`
-- Either object or a function returning object
+- Both server and client can expose remote functions to each other
+- Can be either an `Object` or a `Function` returning an object
 - Keys are method names
 - Values are async functions
-- Both server and client can expose remote functions
 
 `options`
-- `options.path` can override the socket path used by Socks
+- `/tmp/node-socks-ipc/${pkgName}.sock` is the default path
+- `\\?\pipe\node-socks-ipc\${pkgName}.sock` is the win32 path
+- `options.sockId` overrides `pkgName` in the path
+- `options.path` overrides the whole socket path
 - forwarded to [p-queue](https://github.com/sindresorhus/p-queue#pqueueoptions)
 - forwarded to [Server](https://nodejs.org/api/net.html#net_class_net_server) and [Socket](https://nodejs.org/api/net.html#net_new_net_socket_options)
 
