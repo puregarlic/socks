@@ -16,39 +16,41 @@ This example pairs a daemon and temporary client.
 // server.js
 const {listen} = require('@starburn/socks')
 
-const methods = () => {
+const methods = (call, socket) => {
 	fromFive: async n => await 5 - n
-};
+}
 
-await listen(methods);
+const server = await listen(methods)
 ```
 
 ```js
 // client.js
 const {connect} = require('@starburn/socks')
 
-const call = await connect();
-const two = await call('fromFive', 3);
-await call('rpc.end')
+const call = await connect()
+const two = await call('fromFive', 3)
+console.log(`2 === ${two}`)
+call('rpc.end')
 ```
 
 ### API
 
 ```js
-server(options, methods) // Promise<Server>
-client(options, methods) // {call, finish}
+const {listen, connect} = require('@starburn/socks')
+listen(methods, options) // Promise<Server>
+connect(methods, options) // Promise<Function>
 ```
+
+`methods`
+- Either object or a function returning object
+- Keys are method names
+- Values are async functions
+- Both server and client can expose remote functions
 
 `options`
 - `options.path` can override the socket path used by Socks
 - forwarded to [p-queue](https://github.com/sindresorhus/p-queue#pqueueoptions)
-- forwarded to [Server](https://nodejs.org/api/net.html#net_class_net_server) and [connect](https://nodejs.org/api/net.html#net_net_connect)
-
-`methods`
-- Is a function called once a connection is made
-- Returns an object with method definitions
-- Keys are the names of methods to call
-- Values are the async functions themselves
+- forwarded to [Server](https://nodejs.org/api/net.html#net_class_net_server) and [Socket](https://nodejs.org/api/net.html#net_new_net_socket_options)
 
 ### Related
 
