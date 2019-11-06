@@ -1,15 +1,14 @@
 name: Run tests on push
-on: 
+on:
   push:
     paths:
       - "*.js"
   pull_request:
     paths:
       - "*.js"
-
 jobs:
   build:
-    name: Lint and Test
+    name: Test
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
@@ -22,9 +21,5 @@ jobs:
         node-version: 10.x
     - name: Install dependencies
       run: npm ci
-    - name: Lint
-      needs: Install dependencies
-      run: npm run lint
     - name: Test
-      needs: Install dependencies
       run: npm test

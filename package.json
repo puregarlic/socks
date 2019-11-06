@@ -2,15 +2,11 @@
   "name": "@starburn/socks",
   "version": "0.0.0",
   "description": "Clean and fresh IPC communication",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint --fix *.js",
-    "test": "ava"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/puregarlic/socks.git"
-  },
+  "license": "MIT",
+  "repository": "puregarlic/socks",
+  "bugs": "https://github.com/puregarlic/socks/issues",
+  "homepage": "https://github.com/puregarlic/socks#readme",
+  "author": "Mac <enkindled@pm.me> (keybase.io/starburn)",
   "keywords": [
     "ipc",
     "net",
@@ -18,15 +14,21 @@
     "unix",
     "windows"
   ],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/puregarlic/socks/issues"
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "xo && ava"
   },
-  "homepage": "https://github.com/puregarlic/socks#readme",
+  "xo": {
+    "semicolon": false
+  },
+  "dependencies": {
+    "nanoid": "^2.1.6",
+    "p-defer": "^3.0.0",
+    "p-queue": "^6.2.0",
+    "read-pkg-up": "^6.0.0"
+  },
   "devDependencies": {
-    "ava": "^2.2.0",
-    "eslint": "^6.1.0",
-    "eslint-config-xo": "^0.26.0"
+    "ava": "^2.4.0",
+    "xo": "^0.25.3"
   }
 }
